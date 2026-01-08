@@ -52,9 +52,25 @@
 
         <section id="lilly" class="card">
             <h2>Lilly</h2>
-            <img src="../images/Lilly/lilly3.jpeg"
-                alt="An Image of Lilly in the Driveway"
-                class="showcase-image">
+            <div class="featured-image-wrapper">
+                <img
+                    id="featured-image"
+                    src="../images/moms/lilly/lilly1.jpeg"
+                    alt="Lilly the Golden Retriever"
+                    class="showcase-image clickable"
+                >
+            </div>
+
+
+            <!-- Lightbox (once per page, near bottom of body) -->
+            <div id="lightbox" class="lightbox hidden">
+                <button class="lightbox-btn prev" aria-label="Previous image">‹</button>
+                <img id="lightbox-img" alt="">
+                <button class="lightbox-btn next" aria-label="Next image">›</button>
+                <button class="lightbox-close" aria-label="Close">✕</button>
+            </div>
+
+
             <p>Lilly’s description goes here.</p>
             <a class="btn" href="../moms/lilly.html">Lilly</a>
         </section>
@@ -65,6 +81,63 @@
         <small>© <span id="year"></span> Knoxville Golden Retrievers</small>
     </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = [
+      "lilly1.jpeg",
+      "lilly2.jpeg",
+      "lilly3.jpeg"
+    ];
+
+    const featuredImage = document.getElementById("featured-image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const nextBtn = document.querySelector(".lightbox-btn.next");
+    const prevBtn = document.querySelector(".lightbox-btn.prev");
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = "../images/Lilly/" + images[index];
+      lightbox.classList.remove("hidden");
+    }
+
+    function showNext() {
+      openLightbox((currentIndex + 1) % images.length);
+    }
+
+    function showPrev() {
+      openLightbox((currentIndex - 1 + images.length) % images.length);
+    }
+
+    // Clicking the featured image opens slideshow
+    featuredImage.addEventListener("click", () => openLightbox(0));
+
+    nextBtn.addEventListener("click", showNext);
+    prevBtn.addEventListener("click", showPrev);
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.add("hidden");
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) {
+        lightbox.classList.add("hidden");
+      }
+    });
+
+    document.addEventListener("keydown", e => {
+      if (lightbox.classList.contains("hidden")) return;
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "Escape") lightbox.classList.add("hidden");
+    });
+  });
+</script>
+
+
 
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
