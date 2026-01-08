@@ -26,6 +26,7 @@ body {
 .site-header {
   position: sticky;
   top: 0;
+  z-index: 1000;
   background: white;
   border-bottom: 2px solid var(--tan);
 }
@@ -99,7 +100,7 @@ body {
   min-width: 180px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   padding: 0.35rem 0;
-  z-index: 1000;
+  z-index: 1100;
 }
 
 /* Dropdown links */
@@ -173,6 +174,7 @@ main { padding: 2rem 0 3rem; }
   border: 1px solid #eaeaea;
   border-radius: 1rem;
   padding: 1rem;
+  /* overflow: hidden; */
 }
 
 .card h2 { margin-top: 0; }
