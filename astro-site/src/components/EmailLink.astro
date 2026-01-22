@@ -1,0 +1,38 @@
+---
+// src/components/EmailLink.astro
+// Reusable email link component
+
+interface Props {
+  subject?: string;
+  body?: string;
+  text?: string;
+}
+
+const EMAIL = "cadbihl03@gmail.com";
+
+const { 
+  subject = "Inquiry About Golden Retriever Puppies",
+  body = "",
+  text = EMAIL
+} = Astro.props;
+
+// Build mailto URL
+const params = new URLSearchParams();
+if (subject) params.set('subject', subject);
+if (body) params.set('body', body);
+
+const mailtoUrl = `mailto:${EMAIL}${params.toString() ? '?' + params.toString() : ''}`;
+---
+
+<a href={mailtoUrl} class="email-link">{text}</a>
+
+<style>
+  .email-link {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+  
+  .email-link:hover {
+    color: var(--gold-dark);
+  }
+</style>

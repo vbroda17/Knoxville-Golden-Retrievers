@@ -1,9 +1,11 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
-    site: 'https://vbroda17.github.io',
-    base: '/Knoxville-Golden-Retrivers',
-    outDir: '../docs',
+  // No base path for local development and custom domain
+  // When you get your domain (southerngoldenretrievers.com), this is perfect
+  
+  server: {
+    port: 4321
+  }
 });
