@@ -2,3 +2,10 @@
 
 /* All base styles are in global.css */
 /* This file is for any homepage-specific overrides if needed */
+
+.home-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
