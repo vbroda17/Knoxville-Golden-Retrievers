@@ -1,0 +1,42 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import EmailLink from '../components/EmailLink.astro';
+import '../styles/index.css';
+
+const title = "Our Dams - Southern Golden Retrievers";
+const description = "Meet Lilly, Roux, and Raine - our tested, cartified, and award-winning golden retriever dams in Knoxville, TN.";
+---
+
+<Layout title={title} description={description}>
+    <div class="container">
+        <section class="hero">
+            <h1>Meet Our Dams</h1>
+            <p>Each of our dams is health-tested, well-loved, and an important part of our family.</p>
+        </section>
+
+        <section id="lilly" class="card">
+            <h2>Lilly</h2>
+            <img src="../images/Lilly/lilly3.jpeg"
+                alt="An Image of Lilly in the Driveway"
+                class="showcase-image">
+            <p>Lilly’s description goes here.</p>
+        </section>
+
+        <section id="roux" class="card">
+            <h2>Roux</h2>
+            <img src="../images/Roux/roux1.jpeg"
+                alt="An Image of Roux with Her Medal"
+                class="showcase-image">
+            <p>Roux's description goes here.</p>
+        </section>
+
+        <section id="raine" class="card">
+            <h2>Raine</h2>
+            <img src="../images/Raine/raine4.jpeg"
+                alt="An Image of Raine in the yard"
+                class="showcase-image">
+            <p>Raine's description goes here.</p>
+        </section>
+    </div>
+</Layout>
