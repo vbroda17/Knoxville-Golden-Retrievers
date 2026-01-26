@@ -1,0 +1,27 @@
+---
+// src/pages/testimonials.astro
+import Layout from '../layouts/Layout.astro';
+import EmailLink from '../components/EmailLink.astro';
+import ContactButton from '../components/ContactButton.astro';
+import { url } from '../utils.js';
+import '../styles/index.css';
+
+const title = "About | Southern Golden Retrievers";
+const description = "Learn about us and how we make sure you get the perfect pup. Located in Knoxville, TN.";
+---
+
+<Layout title={title} description={description}>
+  <div class="container">
+        <section class="hero">
+            <h1>Testimonials!</h1>
+            <p>We know the quality of our dogs, and so do others! Hear some of there stories.</p>
+        </section>
+
+        <section class="card">
+            <img src={url("/images/Group/group2-4.jpeg")}
+                alt="Our Three Golden Retrievers"
+                class="showcase-image">
+        </section>
+    </div>
+  </div>
+</Layout>
