@@ -19,7 +19,8 @@ export const currentLitters = [
     puppies: [
       {
         name: "Puppy 1",
-        image: "/images/litters/lilly-winter-2026/puppy1.jpg",
+        // image: "/images/litters/lilly-winter-2026/puppy1.jpg",
+        image: "/images/Group/group3-7.jpg",
         gender: "Male",
         color: "Golden",
         status: "Available", // Available, Reserved, Adopted
