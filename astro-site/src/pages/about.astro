@@ -21,13 +21,13 @@ const description = "Learn about us and how we make sure you get the perfect pup
             <EmailLink showCopy={true} />
             .</p>
             <p>Feel Free to explore more about us in the meantime.</p>
-            <a class="btn" href="dams">Dams</a>
-            <a class="btn" href="current-litters">Current Litters</a>
-            <a class="btn" href="contact">Contact Us</a>
+            <a class="btn" href={url("dams")}>Dams</a>
+            <a class="btn" href={url("current-litters")}>Current Litters</a>
+            <a class="btn" href={url("contact")}>Contact Us</a>
         </section>
 
         <section class="card">
-            <img src="/images/Group/group2-4.jpeg"
+            <img src={url("/images/Group/group2-4.jpeg")}
                 alt="Our Three Golden Retrievers"
                 class="showcase-image">
         </section>
