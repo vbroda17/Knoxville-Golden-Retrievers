@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import EmailLink from '../components/EmailLink.astro';
 import ContactButton from '../components/ContactButton.astro';
 import { url } from '../utils.js';
-import '../styles/index.css';
+import '../styles/testimonials.css';
 
 const title = "About | Southern Golden Retrievers";
 const description = "Learn about us and how we make sure you get the perfect pup. Located in Knoxville, TN.";
@@ -14,14 +14,39 @@ const description = "Learn about us and how we make sure you get the perfect pup
   <div class="container">
         <section class="hero">
             <h1>Testimonials!</h1>
-            <p>We know the quality of our dogs, and so do others! Hear some of there stories.</p>
+            <p>We know the quality of our dogs, and so do others! Hear some of there stories. (Currently Place Holder Stories)</p>
         </section>
 
-        <section class="card">
-            <img src={url("/images/Group/group2-4.jpeg")}
-                alt="Our Three Golden Retrievers"
-                class="showcase-image">
-        </section>
+        <!-- Testimonial Card - Image on Left -->
+        <div class="testimonial-card">
+            <div class="testimonial-image-wrapper">
+                <img src={url("/images/Group/group2-4.jpeg")}
+                    alt="Customer with their Golden Retriever"
+                    class="testimonial-image">
+            </div>
+            <div class="testimonial-content">
+                <blockquote class="testimonial-quote">
+                    "Our Golden Retriever from Southern Golden Retrievers has been the best addition to our family. The entire process was smooth, and they were so helpful every step of the way!"
+                </blockquote>
+                <p class="testimonial-author">- The Smith Family</p>
+                <p class="testimonial-date">Got their pup in Spring 2024</p>
+            </div>
+        </div>
+
+        <!-- Testimonial Card - Image on Right -->
+        <div class="testimonial-card reverse">
+            <div class="testimonial-image-wrapper">
+                <img src={url("/images/Group/group2-4.jpeg")}
+                    alt="Happy customer with Golden Retriever"
+                    class="testimonial-image">
+            </div>
+            <div class="testimonial-content">
+                <blockquote class="testimonial-quote">
+                    "We couldn't be happier with our puppy! The care and attention to detail from the breeder was exceptional. Our pup is healthy, happy, and so well-adjusted."
+                </blockquote>
+                <p class="testimonial-author">- John & Sarah</p>
+                <p class="testimonial-date">Got their pup in Fall 2023</p>
+            </div>
+        </div>
     </div>
-  </div>
 </Layout>
